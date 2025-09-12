@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>展示作品</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/png" href="./images/favicon.png">
+</head>
+<body class="overlay3">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-button">
+	<span></span>
+</label>
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-button">
+</label>
+
+<nav class="menu-nav">
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="concept.html">Concept</a></li>
+		<li><a href="artworks.html">Artworks</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li>
+			<a href="https://www.(xx)instagram.com/reflecting_mirror_image" target=”_blank”>
+			<img src="./images/Instagram_Glyph_Black.svg" alt="画像1の説明文" class="instagram_icon">
+			</a>
+		</li>
+	</ul>
+</nav>
+<main class="page">
+	<div class="scroll-fade-in">
+		<section class="artwork-info">
+			<div class="image-container">
+				<img src="./images/A.png" alt="PrivateE">
+			</div>
+			<div class="artwork-caption-text">
+				<h2>PrivateE</h2>
+				<h4>Loki</h4>
+				<p>紙</p>
+				<p>2025</p>
+			</div>
+			<div class="artwork-info-text">
+				<p>自作TRPGシナリオを印刷、製本した作品。および、コンセプトパネル。裁きをテーマに一風変わった探偵をロールプレイができる。<br>あらすじ　探索者の勤める探偵事務所に 1 人の依頼人が現れる。 彼は過去に交際していた3人の女性が同時に失踪したという。そして彼の元に届いたのはかつての交際相手からの奇妙な手紙。奇妙な失踪事件を追う中で探索者は思いがけない真実を知ることになる。</p>
+			<div class="artwork-info-text-link">
+					<a href="https://booth.pm/ja/items/6961033" target=”_blank”><p class="underline">販売ページ</p></a>
+			</div>
+			</div>
+		</section>
+		<footer>
+			<a href="contact.html">&copy; 2025 鏡像をうつす</a>
+		</footer>
+	</div>
+</main>
+<script>
+// ドキュメントが完全に読み込まれた後に実行
+	document.addEventListener('DOMContentLoaded', () => {
+		const menuButton = document.querySelector('.menu-button');
+		setTimeout(() => {
+		menuButton.classList.add('visible');
+	}, 400);
+});
+
+// フェードイン処理
+const fadeInElements = document.querySelectorAll('.scroll-fade-in');
+const handleScroll = () => {
+	fadeInElements.forEach(element => {
+		const elementPosition = element.getBoundingClientRect().top;
+		const screenHeight = window.innerHeight;
+// 要素が画面の80%の位置に来たら'active'クラスを追加
+		if (elementPosition < screenHeight * 0.8) {
+		element.classList.add('active');
+	} else {
+		element.classList.remove('active');
+	}
+});
+};
+
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+</script>
+</body>
+</html>

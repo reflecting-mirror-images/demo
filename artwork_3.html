@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>展示作品</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/png" href="./images/favicon.png">
+</head>
+<body class="overlay3">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-button">
+	<span></span>
+</label>
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-button">
+</label>
+
+<nav class="menu-nav">
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="concept.html">Concept</a></li>
+		<li><a href="artworks.html">Artworks</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li>
+			<a href="https://www.(xx)instagram.com/reflecting_mirror_image" target=”_blank”>
+			<img src="./images/Instagram_Glyph_Black.svg" alt="画像1の説明文" class="instagram_icon">
+			</a>
+		</li>
+	</ul>
+</nav>
+<main class="page">
+	<div class="scroll-fade-in">
+		<section class="artwork-info">
+			<div class="image-container">
+				<img src="./images/noimage.png" alt="PrivateE">
+			</div>
+			<div class="artwork-caption-text">
+				<h2>時刻は午前０時きっかりを指していた</h2>
+				<h4>ぎむ</h4>
+				<p>1/7スケールフィギュア</p>
+				<p>2025</p>
+			</div>
+			<div class="artwork-info-text">
+				<p>人体実験によって怪物の姿に変えられてしまった軍人が、敵国の貴族の少女と恋に落ちる</p>
+			</div>
+		</section>
+
+		<footer>
+			<a href="contact.html">&copy; 2025 鏡像をうつす</a>
+		</footer>
+	</div>
+</main>
+<script>
+// ドキュメントが完全に読み込まれた後に実行
+	document.addEventListener('DOMContentLoaded', () => {
+		const menuButton = document.querySelector('.menu-button');
+		setTimeout(() => {
+		menuButton.classList.add('visible');
+	}, 400);
+});
+
+// フェードイン処理
+const fadeInElements = document.querySelectorAll('.scroll-fade-in');
+const handleScroll = () => {
+	fadeInElements.forEach(element => {
+		const elementPosition = element.getBoundingClientRect().top;
+		const screenHeight = window.innerHeight;
+// 要素が画面の80%の位置に来たら'active'クラスを追加
+		if (elementPosition < screenHeight * 0.8) {
+		element.classList.add('active');
+	} else {
+		element.classList.remove('active');
+	}
+});
+};
+
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+</script>
+</body>
+</html>
