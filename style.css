@@ -988,42 +988,7 @@ padding-bottom:5vh;
     height: 75px; /* メニューボタンを覆うのに十分な高さ */
     background-color: rgba(255, 255, 255, 0.5); /* 不透明度50%の白 */
     z-index: 99; /* menu-button (z-index: 101) より低く、 menu-nav (z-index: 100) より低く、ページコンテンツより高い値 */
-    opacity: 0; /* 初期状態では非表示 */
+    opacity: 1; /* 初期状態では非表示 */
     pointer-events: none; /* 下のコンテンツを操作できるようにする */
     transition: opacity 0.3s ease; /* フェードイン/アウトのアニメーション */
 }
-
-.scrolled-menu-bg {  animation: fadeIn linear;
-	animation-timeline: scroll(); /* スクロールと連動 */
-	animation-range: entry 0%  cover 10%;
-animation-fill-mode: forwards;
-}
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(0rem);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-/* メニューが開いているときは、スクロール背景を非表示にする */
-#menu-toggle:checked ~ #scrolled-menu-bg {
-    opacity: 0; 
-}
-
-/* メニューを開いたときの menu-nav の背景設定を修正 */
-/* menu-navがメニューボタンと同じz-indexだと、ボタンの線が見えなくなるため、z-indexを調整するか、
-   menu-navのスタイルで半透明背景が適用されないようにする必要があります。
-   今回は #scrolled-menu-bg を z-index: 99 にし、menu-button (101) と menu-nav (100) の下になるようにしました。
-   ただし、menu-navのz-indexが100で半透明の背景を持つ場合、この設定は複雑になります。
-   既存のスタイルを考慮し、#scrolled-menu-bgをz-index: 99に設定します。
-*/
-
-/* 既存の .menu-button のz-index: 101 と .menu-nav の z-index: 100 との関連性から、
-   #scrolled-menu-bgを z-index: 99 に設定することで、メニューボタンの下に配置されます。*/
-
-}
-
