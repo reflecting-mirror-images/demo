@@ -16,7 +16,7 @@
 <label for="menu-toggle" class="menu-button">
 </label>
 
-<div id="scrolled-menu-bg"></div>
+<div class="scrolled-menu-bg"></div>
 <nav class="menu-nav">
 	<ul>
 		<li><a href="index.html">Home</a></li>
@@ -143,21 +143,7 @@
 		setTimeout(() => {
 		menuButton.classList.add('visible');
 	}, 400);
-// メニューバーに背景を追加するためのスクロール監視の処理
-	const scrolledMenuBg = document.getElementById('scrolled-menu-bg');
-	const scrollThreshold = 20; // 20px
 
-	const handleFixedHeaderBg = () => {
-		if (window.scrollY > scrollThreshold) {
-			scrolledMenuBg.classList.add('visible-on-scroll');
-		} else {
-			scrolledMenuBg.classList.remove('visible-on-scroll');
-		}
-	};
-
-	window.addEventListener('scroll', handleFixedHeaderBg);
-	handleFixedHeaderBg(); // ページロード時にもチェック
-// ここまで
 });
 
 // フェードイン処理
