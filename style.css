@@ -980,7 +980,7 @@ padding-bottom:5vh;
 
 /* style.css の末尾など、適切な位置に追加 */
 
-#scrolled-menu-bg {
+.scrolled-menu-bg {
     position: fixed; /* 画面に固定 */
     top: 0;
     left: 0;
@@ -993,9 +993,20 @@ padding-bottom:5vh;
     transition: opacity 0.3s ease; /* フェードイン/アウトのアニメーション */
 }
 
-/* スクロール後に適用するクラス */
-#scrolled-menu-bg.visible-on-scroll {
-    opacity: 1;
+.scrolled-menu-bg {  animation: fadeIn linear;
+	animation-timeline: scroll(); /* スクロールと連動 */
+	animation-range: entry 0%  cover 10%;
+animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(0rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 /* メニューが開いているときは、スクロール背景を非表示にする */
@@ -1015,3 +1026,4 @@ padding-bottom:5vh;
    #scrolled-menu-bgを z-index: 99 に設定することで、メニューボタンの下に配置されます。*/
 
 }
+
