@@ -988,7 +988,7 @@ padding-bottom:5vh;
     height: 75px; /* メニューボタンを覆うのに十分な高さ */
     background-color: rgba(255, 255, 255, 0.5); /* 不透明度50%の白 */
     z-index: 99; /* menu-button (z-index: 101) より低く、 menu-nav (z-index: 100) より低く、ページコンテンツより高い値 */
-    opacity: 1; /* 初期状態では非表示 */
+    opacity: 0; /* 初期状態では非表示 */
     pointer-events: none; /* 下のコンテンツを操作できるようにする */
     transition: opacity 0.3s ease; /* フェードイン/アウトのアニメーション */
 }
